@@ -5,9 +5,6 @@ export default function Selector({ text, formParameter }: selectorProps) {
   const { formData, updateForm } = useForm();
   const value = formData[formParameter];
 
-  console.log(formParameter, ' <---------------')
-  console.log(value, ' value <-----')
-
   const isArray = Array.isArray(value);
   const isSelected = isArray ? value.includes(text) : value === text;
 

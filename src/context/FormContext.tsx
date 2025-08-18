@@ -25,7 +25,59 @@ export type FormData = {
   notes?: string
   email?: string
   whatsapp?: string
+
 }
+
+export interface IFormData {
+  name: string;
+  lastName: string;
+  startDateType: string;
+  startDate: Date | undefined;
+  tripLength: number | undefined;
+  vibe: string[];
+  people: number | undefined;
+  startDestination: string;
+  startDestinationInput: string;
+  endDestination: string;
+  endDestinationInput: string;
+  transport: string[];
+  discountedCar: string; // Keep as string if it can be ""
+  discountedBus: string;
+  discountedCamper: string;
+  accomodation: string[];
+  hostel: string[];
+  accomodationOther: string;
+  activities: string[];
+  notes: string;
+  whatsapp: string;
+  email: string;
+}
+
+// Step 2: Define the initial state using the interface
+export const initialState: IFormData = {
+  name: "",
+  lastName: "",
+  startDateType: "",
+  startDate: undefined,
+  tripLength: undefined,
+  vibe: [],
+  people: undefined,
+  startDestination: "",
+  startDestinationInput: "",
+  endDestination: "",
+  endDestinationInput: "",
+  transport: [],
+  discountedCar: "",
+  discountedBus: "",
+  discountedCamper: "",
+  accomodation: [],
+  hostel: [],
+  accomodationOther: "",
+  activities: [],
+  notes: "",
+  whatsapp: "",
+  email: "",
+};
 
 type FormContextType = {
   formData: FormData
@@ -79,7 +131,6 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(formData))
-    console.log(formData)
   }, [formData])
 
   const updateForm = (updates: Partial<FormData>) => {

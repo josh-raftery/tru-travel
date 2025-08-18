@@ -6,6 +6,7 @@ type NextProps = {
   text?: string
   width?: string
   fill?: string
+  sendEmail?: () => void
 }
 
 export default function Next({
@@ -13,13 +14,17 @@ export default function Next({
   fill = "white",
   text = "Next",
   linkTo,
-  onClick
+  onClick,
+  sendEmail
 }: NextProps) {
   const navigate = useNavigate()
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const result = onClick?.(e) // Run parent validation
     if (result === false || e.defaultPrevented) return // Block navigation
+    if(sendEmail){
+      sendEmail()
+    }
     navigate(linkTo) // Navigate only if valid
   }
 
