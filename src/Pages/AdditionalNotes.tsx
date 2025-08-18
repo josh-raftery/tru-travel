@@ -10,7 +10,7 @@ export default function AdditionalNotes(){
             <Title title="Is there anything else you'd like to mention"/>
             <textarea placeholder="Additional notes" />
             <Next linkTo="/contact" />
-            <Previous linkTo="/activities" />
+            <Previous />
         </div>
     )
 }

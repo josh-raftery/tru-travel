@@ -41,7 +41,7 @@ export default function AccomodationOther() {
                 />
             </div>
             <Next onClick={handleNext} linkTo="/activities" />
-            <Previous linkTo="/accomodation" />
+            <Previous/>
         </div>
     )
 }

@@ -39,7 +39,7 @@ export default function StartDestination() {
       />
       <div className="gap-5 grid">
         <Next onClick={handleNext} linkTo={selected === 'Other' ? "/startDestinationInput" : "/endDestination"} />
-        <Previous linkTo="/people" />
+        <Previous />
       </div>
     </div>
   );

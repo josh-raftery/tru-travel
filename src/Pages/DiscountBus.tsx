@@ -43,7 +43,7 @@ export default function DiscountBus(){
           />
           <div className="gap-5 grid">
             <Next onClick={handleNext} linkTo={nextLink} />
-            <Previous linkTo="/transport" />
+            <Previous  />
           </div>
         </div>
       );

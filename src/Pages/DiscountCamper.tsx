@@ -36,7 +36,7 @@ export default function DiscountCamper() {
       />
       <div className="gap-5 grid">
         <Next onClick={handleNext} linkTo="/accomodation" />
-        <Previous linkTo="/transport" />
+        <Previous />
       </div>
     </div>
   );

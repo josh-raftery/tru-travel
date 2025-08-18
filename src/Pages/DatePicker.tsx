@@ -48,7 +48,7 @@ export default function StartDatePicker() {
       </div>
       <div className="gap-5 grid">
         <Next linkTo="/tripLength" onClick={handleNext} />
-        <Previous linkTo="/name" />
+        <Previous />
       </div>
     </div>
   );

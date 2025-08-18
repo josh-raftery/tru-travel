@@ -47,7 +47,7 @@ export default function Transport() {
       />
       <div className="gap-5 grid">
         <Next onClick={handleNext} linkTo={nextLink} />
-        <Previous linkTo="/endDestination" />
+        <Previous />
       </div>
     </div>
   );

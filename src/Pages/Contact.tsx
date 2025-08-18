@@ -58,7 +58,7 @@ export default function Contact() {
                 />
             </div>
             <Next onClick={handleNext} linkTo="/finish" />
-            <Previous linkTo="/additionalNotes" />
+            <Previous />
         </div>
     )
 }

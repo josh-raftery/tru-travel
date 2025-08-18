@@ -41,7 +41,7 @@ export default function StartDestinationInput() {
                 />
             </div>
             <Next onClick={handleNext} linkTo="/endDestination" />
-            <Previous linkTo="/people" />
+            <Previous />
         </div>
     )
 }

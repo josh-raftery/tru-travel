@@ -1,4 +1,4 @@
-export default function Previous({fill="black", linkTo='/'}){
+export default function Previous({fill="black"}){
     return (
             <button 
                 className="rounded-xl flex justify-center w-full h-9 p-1 m-auto outline-solid gap-3 hover:opacity-50 items-center"

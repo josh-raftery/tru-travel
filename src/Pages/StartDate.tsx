@@ -1,10 +1,10 @@
-import { useContext, useState } from "react";
 import SelectorParent from "../components/SelectorParent";
 import Title from "../components/Title";
 import Next from "../svg/Next";
 import Previous from "../svg/Previous";
 import { useForm } from "../context/FormContext"
 import TooltipError from "../components/TooltipError";
+import { useState } from "react";
 
 export default function StartDate() {
   const textArr = ["I'm flexible", "I know my start date", "I just want a quote"];
@@ -36,7 +36,7 @@ export default function StartDate() {
       />
       <div className="gap-5 grid">
         <Next onClick={handleNext} linkTo={selected === "I know my start date" ? "/datePicker" : "/tripLength"} />
-        <Previous linkTo="/name" />
+        <Previous />
       </div>
     </div>
   );

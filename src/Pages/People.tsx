@@ -35,7 +35,7 @@ export default function People(){
           </div>
           <div className="gap-5 grid">
             <Next linkTo="/startDestination" />
-            <Previous linkTo="/vibe" />
+            <Previous />
           </div>
         </div>
     );

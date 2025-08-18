@@ -57,7 +57,7 @@ export default function Name() {
       </div>
       {/* Pass the click handler to block navigation */}
       <Next linkTo="/startDate" onClick={handleNext} />
-      <Previous linkTo="/" />
+      <Previous />
     </div>
   )
 }

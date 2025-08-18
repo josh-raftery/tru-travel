@@ -45,7 +45,7 @@ export default function Hostels(){
           />
           <div className="gap-5 grid">
             <Next onClick={handleNext} linkTo={nextLink} />
-            <Previous linkTo="/accomodation" />
+            <Previous />
           </div>
         </div>
       );

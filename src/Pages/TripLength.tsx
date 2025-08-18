@@ -38,7 +38,7 @@ export default function TripLength() {
       </div>
       <div className="gap-5 grid">
         <Next linkTo="/vibe" />
-        <Previous linkTo="/startDate" />
+        <Previous />
       </div>
     </div>
   );

@@ -42,7 +42,7 @@ export default function EndDestinationInput() {
                 />
             </div>
             <Next onClick={handleNext} linkTo="/transport" />
-            <Previous linkTo="/endDestination" />
+            <Previous />
         </div>
     )
 }

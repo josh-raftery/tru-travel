@@ -46,7 +46,7 @@ export default function Accomodation(){
           />
           <div className="gap-5 grid">
             <Next  onClick={handleNext} linkTo={nextLink} />
-            <Previous linkTo="/transport" />
+            <Previous />
           </div>
         </div>
       );

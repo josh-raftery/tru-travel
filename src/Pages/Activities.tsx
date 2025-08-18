@@ -1,6 +1,5 @@
 // 11
 
-import { useState } from "react";
 import SelectorParent from "../components/SelectorParent";
 import Title from "../components/Title";
 import Next from "../svg/Next";
@@ -36,7 +35,7 @@ export default function Activities(){
             <Next
                 linkTo="/additionalNotes"
             />
-            <Previous linkTo="/accomodation" />
+            <Previous />
           </div>
         </div>
       );

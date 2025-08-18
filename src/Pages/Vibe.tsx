@@ -38,7 +38,7 @@ export default function Vibe() {
       />
       <div className="gap-5 grid">
         <Next onClick={handleNext} linkTo="/people" />
-        <Previous linkTo="/tripLength" />
+        <Previous />
       </div>
     </div>
   );
