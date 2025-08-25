@@ -1,5 +1,6 @@
 // 11
 
+import { useEffect, useState } from "react";
 import SelectorParent from "../components/SelectorParent";
 import Title from "../components/Title";
 import Next from "../svg/Next";
@@ -21,6 +22,19 @@ export default function Activities(){
         "Waterfalls",
         "Wildlife Experiences"
     ];
+
+    const [columns, setColumns] = useState(2)
+
+    useEffect(() => {
+      const updateColumns = () => {
+        setColumns(window.innerWidth <= 400 ? 1 : 2) // 768px is md breakpoint
+      }
+
+      updateColumns() // Set initial value
+      window.addEventListener('resize', updateColumns)
+
+      return () => window.removeEventListener('resize', updateColumns)
+    }, [])
     
     return (
         <div className="gap-10 grid m-5">
@@ -28,7 +42,7 @@ export default function Activities(){
           <SelectorParent
             textArr={textArr}
             formParameter="activities"
-            columns={2}
+            columns={columns}
             selectOneOnly={false}
           />
           <div className="gap-5 grid">

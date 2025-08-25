@@ -49,7 +49,7 @@ export default function Transport() {
       <SelectorParent
         textArr={textArr}
         formParameter="transport"
-        columns={2}
+        columns={1}
         selectOneOnly={false}
         srcObj={srcObj}
       />

@@ -16,7 +16,7 @@ export default function Vibe() {
     Party: "/party.svg",
     Chilled: "/chilled.svg",
     Flashpacker: "/flashpacker.svg",
-    Couple: "/couple.svg",
+    Couple: "/couple.png",
     Family: "/family.svg"
   }
 
