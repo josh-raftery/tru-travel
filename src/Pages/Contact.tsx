@@ -58,8 +58,8 @@ export default function Contact() {
 
     emailjs
       .send(
-        "service_zdbkeu9",
-        "template_iwc409s",
+        "service_05hr8th",
+        "template_i34nh3b",
         {
           name: `${formData.name} ${formData.lastName}`,
           from_email: formData.email,
@@ -71,18 +71,18 @@ export default function Contact() {
           //   },
           // ],
         },
-        "N_RRgxmLwNEoENTBU"
+        "wDHbHKy9qzm8dOWna"
       )
       .then(() => {
         emailjs.send(
-          "service_zdbkeu9",
-          "template_crid2lo",
+          "service_05hr8th",
+          "template_gxg992p",
           {
             name: formData.name,
             to_email: formData.email,
             message_html: formattedHTML,
           },
-          "N_RRgxmLwNEoENTBU" // Same public key
+          "wDHbHKy9qzm8dOWna" // Same public key
         )
       })
       .then(
