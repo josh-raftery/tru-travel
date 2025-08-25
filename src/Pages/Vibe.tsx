@@ -6,7 +6,7 @@ import TooltipError from "../components/TooltipError";
 import Next from "../svg/Next";
 import Previous from "../svg/Previous";
 import { useForm } from "../context/FormContext"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Vibe() {
 
@@ -19,6 +19,19 @@ export default function Vibe() {
     Couple: "/couple.png",
     Family: "/family.svg"
   }
+
+  const [columns, setColumns] = useState(2)
+    
+  useEffect(() => {
+    const updateColumns = () => {
+      setColumns(window.innerWidth <= 400 ? 1 : 2) // 768px is md breakpoint
+    }
+
+    updateColumns() // Set initial value
+    window.addEventListener('resize', updateColumns)
+
+    return () => window.removeEventListener('resize', updateColumns)
+  }, [])
 
   const { formData } = useForm()
   const selected = formData.vibe || [];
@@ -43,7 +56,7 @@ export default function Vibe() {
       <SelectorParent
         textArr={textArr}
         formParameter="vibe"
-        columns={2}
+        columns={columns}
         srcObj={srcObj}
       />
       <div className="gap-5 grid">
