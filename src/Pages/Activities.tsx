@@ -24,7 +24,7 @@ export default function Activities(){
     
     return (
         <div className="gap-10 grid m-5">
-          <Title title="Are any of these a must for you?" />
+          <Title title="design your dream experience" />
           <SelectorParent
             textArr={textArr}
             formParameter="activities"

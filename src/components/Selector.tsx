@@ -23,16 +23,17 @@ export default function Selector({ text, formParameter, src }: selectorProps) {
   return (
     <button
       onClick={handleClick}
-      className={`rounded-xl flex w-full ${src ? 'h-15' : 'h-9'} p-0 m-auto overflow-hidden ${
-        isSelected ? "tru-primary-border tru-primary" : "outline-solid"
-      } hover:opacity-50 items-center`}
+      className={`rounded-xl flex w-full ${src ? 'h-15' : 'h-9'} p-0 m-auto slide-transition ${isSelected ? "selected tru-primary-border" : "outline-solid"
+        } items-center`}
     >
-      {src && <img 
-    src={src} 
-    alt={text} 
-    className="h-full w-2/5 object-cover max-w-[100px]"
-  />}
-      <p className={`tru-text ${isSelected && "text-white"} flex-1 px-2`}>{text}</p>
+      {src && <img
+        src={src}
+        alt={text}
+        className="h-full w-2/5 object-cover max-w-[100px] slide-content"
+      />}
+      <p className={`tru-text slide-content ${isSelected && "text-white"} flex-1 px-2`}>
+        {text}
+      </p>
     </button>
   );
 }

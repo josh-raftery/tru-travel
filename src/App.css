@@ -6,6 +6,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Add to your App.css */
+.app-container {
+  overflow-x: hidden;
+}
+
 input,
 textarea {
   background: none;
@@ -30,6 +35,47 @@ textarea{
 
 .tru-primary{
   background-color: hsla(178.31, 76%, 46%, 1)
+}
+
+.slide-transition {
+  position: relative;
+  background-color: white;
+  color: black;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  z-index: 0;
+}
+
+.slide-transition::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(178.31, 76%, 46%, 1);
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.slide-transition.selected::before {
+  transform: translateX(0);
+}
+
+/* For slide out effect when deselecting */
+.slide-transition:not(.selected)::before {
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-transition.selected {
+  color: white;
+}
+
+.slide-content {
+  position: relative;
+  z-index: 1;
 }
 
 input:focus,

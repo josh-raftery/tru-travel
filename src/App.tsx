@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 import Start from './Pages/Start'
 import Header from './components/Header'
@@ -21,41 +21,47 @@ import AccomodationOther from './Pages/AccomodationOther'
 import Activities from './Pages/Activities'
 import AdditionalNotes from './Pages/AdditionalNotes'
 import Contact from './Pages/Contact'
-import { FormProvider } from './context/FormContext'
 import EndDestinationInput from './Pages/EndDestinationInput'
 import Finish from './Pages/Finish'
+import { AnimatePresence } from 'framer-motion'
+import './App.css'
+import { FormProvider } from './context/FormContext'
+import PageWrapper from './components/PageWrapper'
 
 function App() {
+  const location = useLocation()
+
   return (
-    <div className='w-full'>
+    <div className='w-full h-full'>
       <Header />
       <FormProvider>
-        <div  className='w-full max-w-[700px] m-auto'>
-
-        <Routes>
-          <Route path='/' element={<Start />} />
-          <Route path='name' element={<Name />} />
-          <Route path='startDate' element={<StartDate />} />
-          <Route path='datePicker' element={<DatePicker />} />
-          <Route path='tripLength' element={<TripLength />} />
-          <Route path='vibe' element={<Vibe />} />
-          <Route path='people' element={<People />} />
-          <Route path='startDestination' element={<StartDestination />} />
-          <Route path='startDestinationInput' element={<StartDestinationInput />} />
-          <Route path='endDestination' element={<EndDestination />} />
-          <Route path='endDestinationInput' element={<EndDestinationInput />} />
-          <Route path='transport' element={<Transport />} />
-          <Route path='discountedCar' element={<DiscountCar />} />
-          <Route path='discountedCamper' element={<DiscountCamper />} />
-          <Route path='discountedBus' element={<DiscountBus />} />
-          <Route path='accomodation' element={<Accomodation />} />
-          <Route path='hostels' element={<Hostels />} />
-          <Route path='accomodationOther' element={<AccomodationOther />} />
-          <Route path='activities' element={<Activities />} />
-          <Route path='additionalNotes' element={<AdditionalNotes />} />
-          <Route path='contact' element={<Contact />} />
-          <Route path='finish' element={<Finish />} />
-        </Routes>
+        <div className='w-full h-[100vh] max-w-[700px] m-auto mt-10'>
+          <AnimatePresence mode="wait" initial={false}>
+            <Routes location={location} key={location.pathname}>
+              <Route path='/' element={<PageWrapper><Start /></PageWrapper>} />
+              <Route path='name' element={<PageWrapper><Name /></PageWrapper>} />
+              <Route path='startDate' element={<PageWrapper><StartDate /></PageWrapper>} />
+              <Route path='datePicker' element={<PageWrapper><DatePicker /></PageWrapper>} />
+              <Route path='tripLength' element={<PageWrapper><TripLength /></PageWrapper>} />
+              <Route path='vibe' element={<PageWrapper><Vibe /></PageWrapper>} />
+              <Route path='people' element={<PageWrapper><People /></PageWrapper>} />
+              <Route path='startDestination' element={<PageWrapper><StartDestination /></PageWrapper>} />
+              <Route path='startDestinationInput' element={<PageWrapper><StartDestinationInput /></PageWrapper>} />
+              <Route path='endDestination' element={<PageWrapper><EndDestination /></PageWrapper>} />
+              <Route path='endDestinationInput' element={<PageWrapper><EndDestinationInput /></PageWrapper>} />
+              <Route path='transport' element={<PageWrapper><Transport /></PageWrapper>} />
+              <Route path='discountedCar' element={<PageWrapper><DiscountCar /></PageWrapper>} />
+              <Route path='discountedCamper' element={<PageWrapper><DiscountCamper /></PageWrapper>} />
+              <Route path='discountedBus' element={<PageWrapper><DiscountBus /></PageWrapper>} />
+              <Route path='accomodation' element={<PageWrapper><Accomodation /></PageWrapper>} />
+              <Route path='hostels' element={<PageWrapper><Hostels /></PageWrapper>} />
+              <Route path='accomodationOther' element={<PageWrapper><AccomodationOther /></PageWrapper>} />
+              <Route path='activities' element={<PageWrapper><Activities /></PageWrapper>} />
+              <Route path='additionalNotes' element={<PageWrapper><AdditionalNotes /></PageWrapper>} />
+              <Route path='contact' element={<PageWrapper><Contact /></PageWrapper>} />
+              <Route path='finish' element={<PageWrapper><Finish /></PageWrapper>} />
+            </Routes>
+          </AnimatePresence>
         </div>
       </FormProvider>
     </div>

@@ -25,8 +25,11 @@ export default function People(){
             </button>
             <span className="tru-text w-[100px] text-center align-middle">{count}</span>
             <button
-                className="rounded-full w-fit outline-solid hover:opacity-50 items-center" 
+                className={`rounded-full w-fit ${count < 2 && '!cursor-not-allowed'} outline-solid hover:opacity-50 items-center`} 
                 onClick={() => setCount((currCount) => {
+                    if(currCount < 2){
+                        return currCount
+                    }
                     return currCount - 1
                 })} 
             >

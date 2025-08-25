@@ -121,7 +121,7 @@ export default function Contact() {
 
   return (
     <div className="gap-5 grid m-5 " >
-      <Title title="CONTACT DETAILS." />
+      <Title title="CONTACT DETAILS?" />
       <div className="relative w-full" >
         <input
           placeholder="Email"

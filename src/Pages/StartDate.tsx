@@ -25,7 +25,7 @@ export default function StartDate() {
   return (
     <div className="gap-10 grid m-5">
       <div>
-        <Title title="START DATES." />
+        <Title title="when do you want to start?" />
         <TooltipError message="Please select one" show={!isValid && touched} centered={true}/>
       </div>
       <SelectorParent

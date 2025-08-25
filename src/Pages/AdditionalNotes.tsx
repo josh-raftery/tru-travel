@@ -10,7 +10,7 @@ export default function AdditionalNotes() {
 
     return (
         <div className="gap-5 grid m-5 " >
-            <Title title="Is there anything else you'd like to mention" />
+            <Title title="Is there anything else you'd like to mention?" />
             <textarea
                 value={formData.notes || ""}
                 placeholder="Additional notes"
