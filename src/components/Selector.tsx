@@ -23,7 +23,7 @@ export default function Selector({ text, formParameter, src }: selectorProps) {
   return (
     <button
       onClick={handleClick}
-      className={`rounded-xl flex w-full h-15 p-0 m-auto overflow-hidden ${
+      className={`rounded-xl flex w-full ${src ? 'h-15' : 'h-9'} p-0 m-auto overflow-hidden ${
         isSelected ? "tru-primary-border tru-primary" : "outline-solid"
       } hover:opacity-50 items-center`}
     >
