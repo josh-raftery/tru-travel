@@ -35,7 +35,7 @@ function App() {
     <div className='w-full h-full'>
       <Header />
       <FormProvider>
-        <div className='w-full h-[100vh] max-w-[700px] m-auto mt-10'>
+        <div className='w-full max-w-[700px] m-auto mt-10 bg-white'>
           <AnimatePresence mode="wait" initial={false}>
             <Routes location={location} key={location.pathname}>
               <Route path='/' element={<PageWrapper><Start /></PageWrapper>} />
