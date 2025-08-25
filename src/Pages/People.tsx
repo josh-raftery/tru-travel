@@ -15,15 +15,6 @@ export default function People(){
         <div className="gap-10 grid m-5">
           <Title title="HOW MANY OF YOU ARE THERE?" />
           <div className="flex justify-center gap-5" >
-            <button 
-                onClick={() => setCount((currCount) => {
-                    return currCount + 1
-                })} 
-                className="rounded-full w-fit outline-solid hover:opacity-50 items-center" 
-            >
-                <Plus/>
-            </button>
-            <span className="tru-text w-[100px] text-center align-middle">{count}</span>
             <button
                 className={`rounded-full w-fit ${count < 2 && '!cursor-not-allowed'} outline-solid hover:opacity-50 items-center`} 
                 onClick={() => setCount((currCount) => {
@@ -34,6 +25,15 @@ export default function People(){
                 })} 
             >
                 <Minus/>
+            </button>
+            <span className="tru-text w-[100px] text-center align-middle">{count}</span>
+            <button 
+                onClick={() => setCount((currCount) => {
+                    return currCount + 1
+                })} 
+                className="rounded-full w-fit outline-solid hover:opacity-50 items-center" 
+            >
+                <Plus/>
             </button>
           </div>
           <div className="gap-5 grid">

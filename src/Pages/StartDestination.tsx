@@ -5,10 +5,23 @@ import Title from "../components/Title";
 import Next from "../svg/Next";
 import Previous from "../svg/Previous";
 import { useForm } from "../context/FormContext"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TooltipError from "../components/TooltipError";
 
 export default function StartDestination() {
+
+  const [columns, setColumns] = useState(2)
+  
+  useEffect(() => {
+    const updateColumns = () => {
+      setColumns(window.innerWidth <= 400 ? 1 : 2) // 768px is md breakpoint
+    }
+
+    updateColumns() // Set initial value
+    window.addEventListener('resize', updateColumns)
+
+    return () => window.removeEventListener('resize', updateColumns)
+  }, [])
 
   const textArr = ["Melbourne", "Sydney", "Byron Bay", "Gold Coast", "Brisbane", "Airlie Beach", "Cairns", "Other"]
   const srcObj ={
@@ -45,7 +58,7 @@ export default function StartDestination() {
       <SelectorParent
         textArr={textArr}
         formParameter="startDestination"
-        columns={2}
+        columns={columns}
         selectOneOnly={true}
         srcObj={srcObj}
       />

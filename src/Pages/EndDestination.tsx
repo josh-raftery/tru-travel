@@ -1,6 +1,6 @@
 // 8
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SelectorParent from "../components/SelectorParent";
 import Title from "../components/Title";
 import Next from "../svg/Next";
@@ -11,6 +11,18 @@ import TooltipError from "../components/TooltipError";
 export default function EndDestination() {
 
   const textArr = ["Melbourne", "Sydney", "Byron Bay", "Gold Coast", "Brisbane", "Airlie Beach", "Cairns", "Other"]
+  const [columns, setColumns] = useState(2)
+    
+    useEffect(() => {
+      const updateColumns = () => {
+        setColumns(window.innerWidth <= 400 ? 1 : 2) // 768px is md breakpoint
+      }
+  
+      updateColumns() // Set initial value
+      window.addEventListener('resize', updateColumns)
+  
+      return () => window.removeEventListener('resize', updateColumns)
+    }, [])
 
   const srcObj ={
     Melbourne: "/melbs.png",
@@ -45,7 +57,7 @@ export default function EndDestination() {
       <SelectorParent
         textArr={textArr}
         formParameter="endDestination"
-        columns={2}
+        columns={columns}
         selectOneOnly={true}
         srcObj={srcObj}
       />
