@@ -30,6 +30,8 @@ function App() {
     <div className='w-full'>
       <Header />
       <FormProvider>
+        <div  className='w-full max-w-[700px] m-auto'>
+
         <Routes>
           <Route path='/' element={<Start />} />
           <Route path='name' element={<Name />} />
@@ -54,6 +56,7 @@ function App() {
           <Route path='contact' element={<Contact />} />
           <Route path='finish' element={<Finish />} />
         </Routes>
+        </div>
       </FormProvider>
     </div>
   )

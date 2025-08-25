@@ -11,6 +11,15 @@ import { useState } from "react";
 export default function Vibe() {
 
   const textArr = ["Adventure", "Party", "Chilled", "Couple", "Flashpacker", "Family"]
+  const srcObj ={
+    Adventure: "/adventure.png",
+    Party: "/party.svg",
+    Chilled: "/chilled.svg",
+    Flashpacker: "/flashpacker.svg",
+    Couple: "/couple.svg",
+    Family: "/family.svg"
+  }
+
   const { formData } = useForm()
   const selected = formData.vibe || [];
 
@@ -35,6 +44,7 @@ export default function Vibe() {
         textArr={textArr}
         formParameter="vibe"
         columns={2}
+        srcObj={srcObj}
       />
       <div className="gap-5 grid">
         <Next onClick={handleNext} linkTo="/people" />

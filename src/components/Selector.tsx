@@ -1,7 +1,7 @@
 import { useForm } from "../context/FormContext";
 import type selectorProps from "../interfaces/selectorProps";
 
-export default function Selector({ text, formParameter }: selectorProps) {
+export default function Selector({ text, formParameter, src }: selectorProps) {
   const { formData, updateForm } = useForm();
   const value = formData[formParameter];
 
@@ -23,11 +23,16 @@ export default function Selector({ text, formParameter }: selectorProps) {
   return (
     <button
       onClick={handleClick}
-      className={`rounded-xl flex justify-center w-full h-9 p-1 m-auto gap-3 ${
+      className={`rounded-xl flex w-full h-15 p-0 m-auto overflow-hidden ${
         isSelected ? "tru-primary-border tru-primary" : "outline-solid"
       } hover:opacity-50 items-center`}
     >
-      <p className={`tru-text ${isSelected && "text-white"}`}>{text}</p>
+      {src && <img 
+    src={src} 
+    alt={text} 
+    className="h-full w-2/5 object-cover max-w-[100px]"
+  />}
+      <p className={`tru-text ${isSelected && "text-white"} flex-1 px-2`}>{text}</p>
     </button>
   );
 }

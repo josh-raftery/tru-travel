@@ -3,15 +3,17 @@ import Selector from "./Selector";
 
 interface Props {
   textArr: string[];
-  selectOneOnly?: boolean; // Optional — could be inferred from FormData type
+  selectOneOnly?: boolean;
   columns: number;
   formParameter: keyof FormData;
+  srcObj?: Record<string, string>; // Fixed: Optional object with string keys and values
 }
 
 export default function SelectorParent({
   textArr,
   columns = 2,
   formParameter,
+  srcObj 
 }: Props) {
   const columnClass =
     {
@@ -26,7 +28,12 @@ export default function SelectorParent({
   return (
     <div className={`gap-5 grid ${columnClass} w-full`}>
       {textArr.map((text) => (
-        <Selector key={text} text={text} formParameter={formParameter} />
+        <Selector 
+          key={text} 
+          text={text} 
+          formParameter={formParameter}
+          {...(srcObj?.[text] && { src: srcObj[text] })} // Fixed: Conditional prop spreading
+        />
       ))}
     </div>
   );

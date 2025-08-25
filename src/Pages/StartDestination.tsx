@@ -11,6 +11,17 @@ import TooltipError from "../components/TooltipError";
 export default function StartDestination() {
 
   const textArr = ["Melbourne", "Sydney", "Byron Bay", "Gold Coast", "Brisbane", "Airlie Beach", "Cairns", "Other"]
+  const srcObj ={
+    Melbourne: "/melbs.png",
+    Sydney: "/sydney.jpg",
+    Brisbane: "/brisbane.jpg",
+    ["Byron Bay"]: "/byron.jpg",
+    ["Gold Coast"]: "/gold_coast.jpg",
+    ["Airlie Beach"]: "/airlie.jpg",
+    Cairns: "/cairns.jpg",
+    Other: "/somehere_else.jpg"
+  }
+
   const { formData } = useForm()
   const selected = formData.startDestination || "";
 
@@ -36,6 +47,7 @@ export default function StartDestination() {
         formParameter="startDestination"
         columns={2}
         selectOneOnly={true}
+        srcObj={srcObj}
       />
       <div className="gap-5 grid">
         <Next onClick={handleNext} linkTo={selected === 'Other' ? "/startDestinationInput" : "/endDestination"} />

@@ -20,7 +20,7 @@ export default function Name() {
 
   return (
     <div className="gap-5 grid m-5">
-      <Title title="NAME." />
+      <Title title="what's your name legend?" />
       <div className="relative w-full">
         <input
           placeholder="First name"

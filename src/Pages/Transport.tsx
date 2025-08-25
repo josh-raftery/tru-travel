@@ -10,6 +10,13 @@ import TooltipError from "../components/TooltipError";
 
 export default function Transport() {
   const textArr = ["Bus", "Rent a Car", "Campervan", "Own Transport"];
+  const srcObj ={
+    Bus: "/Greyhound bus design.zip - 15.svg",
+    ["Rent a Car"]: "/car_rental.svg",
+    Campervan: "/camper.svg",
+    ["Own Transport"]: "/other_tansport.svg",
+  }
+
   const { formData } = useForm();
   const selected = formData.transport || [];
 
@@ -44,6 +51,7 @@ export default function Transport() {
         formParameter="transport"
         columns={2}
         selectOneOnly={false}
+        srcObj={srcObj}
       />
       <div className="gap-5 grid">
         <Next onClick={handleNext} linkTo={nextLink} />
